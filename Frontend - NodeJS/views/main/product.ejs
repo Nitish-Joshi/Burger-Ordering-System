@@ -1,0 +1,33 @@
+<% layout('layout') -%>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <img src="<%= product.Image %>" style="width:600px;height:500px;" class="border">
+        </div>
+
+        <div class="col-md-4">
+            <h3><%= product.ProductName %></h3>
+            <h1>$<%= product.Price %></h1>
+            <p class="lead"><%= product.ProductDesc %></p>
+
+            <form method="post" >
+
+                     <input type="text" name="quantity" id="quantity"  class="form-control border border-dark"  placeholder="Quantity" required>
+                     <input type="hidden" name="product_id" id="quantity"   class="form-control" value="<%= product.ProductID %>">
+                     <input type="hidden" name="priceHidden" id="priceHidden"  class="form-control" value="<%= product.Price %>">
+                     <input type="hidden" name="item" class="form-control" value="<%= product.ProductName %>">
+                       <p class="mt-2"></p>
+                     <!-- <input type="text" id="priceValue"  name="priceValue"  style="border: none;  background: transparent; border-color: transparent;" value="$<%= product.Price%>" readonly> -->
+
+                        <p class="mt-5"></p>
+                <% if(login) { %>
+                    <button type="submit" class="btn btn-primary btn-lg">Add to cart</button>
+                <% } else { %>
+                    <a href="/signup" class="btn btn-info btn-lg">Sign up to begin buying!</a>
+                <% } %>
+
+            </form>
+        </div>
+    </div>
+</div>

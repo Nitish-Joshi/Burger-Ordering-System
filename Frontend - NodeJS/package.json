@@ -1,0 +1,27 @@
+{
+  "name": "onlineburgerapplication",
+  "version": "",
+  "main":"app.js",
+  "engines": {
+    "node": "8.11.4"
+  },
+  "dependencies": {
+    "async-waterfall": "^0.1.5",
+    "axios": "^0.18.0",
+    "cookie-parser": "^1.4.3",
+    "csurf": "^1.9.0",
+    "ejs": "^2.6.1",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-partials": "^0.3.0",
+    "express-session": "^1.15.6",
+    "node-rest-client": "^3.1.0",
+    "path": "^0.12.7",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  }
+}

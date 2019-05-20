@@ -1,0 +1,43 @@
+<% layout('layout') -%>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-8 col-md-offset-2">
+    <h2><%= order.OrderStatus %></h2>
+
+    <form action="/payment" method="POST">
+
+	<table class ="table table-striped">
+	    <tr>
+		<th>Order Id: </th><td colspan="3"><%= order.OrderID %></td>
+	    </tr>
+	    <tr>
+		<th> Transaction Total: </th><td colspan="3"><%= order.Total%></td>
+	    </tr>
+	    <tr><th scope="column">Product</th><th scope="column">Quantity</th><th scope="column">Rate</th>
+	    </tr>
+
+		    <% for(var i=0; i < order.Products.length; i++) { %>
+
+	    <tr>
+		    <td>&nbsp;&nbsp; <%=  order.Products[i].ProductName %>&nbsp;&nbsp;</td>
+		    <td>&nbsp;&nbsp; <%=  order.Products[i].Quantity %> &nbsp;&nbsp;</td>
+		    <td>&nbsp;&nbsp; <%=  order.Products[i].Price %>&nbsp;&nbsp;</td>
+
+
+		       </tr>
+
+		       <% } %>
+
+	    </table>
+	<br>
+  <input type="hidden" name="orderid" value="<%= order.OrderID %>"/>
+  <input type="hidden" name="orderTotal" value="<%= order.Total %>"/>
+  <input type="hidden" name="paymentID" value="<%= payment.PaymentID %>"/>
+	<input type="submit" class="btn btn-primary" value="Pay Now!!">
+
+    </form>
+
+</div>
+</div>
+</div>
